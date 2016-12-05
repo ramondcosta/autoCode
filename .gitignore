@@ -1,3 +1,9 @@
+# qtcreator files
+*.pro*
+
+# test files
+*.test
+
 # Compiled Object files
 *.slo
 *.lo
