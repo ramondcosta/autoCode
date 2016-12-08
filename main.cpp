@@ -53,6 +53,11 @@ void buildCode(JsonObject& root){
     string sInt = root["handler"]["int"];
     string sBool = root["handler"]["bool"];
 
+    /*
+     * Attributes the correct expression to the function
+     * If the expression is empty attributes the "0" value
+     *
+     */
     const char* exprStr = (sStr.c_str()[0] == '\0') ? "0" : sStr.c_str();
     const char* exprInt = (sInt.c_str()[0] == '\0') ? "0" : sInt.c_str();
     const char* exprBool = (sBool.c_str()[0] == '\0') ? "0" : sBool.c_str();
