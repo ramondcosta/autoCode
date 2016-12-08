@@ -15,18 +15,23 @@ template = "class %s : public Sensor{\n" +
            handlerTemplate("bool") +
            "}\n";
 
-sensors = device01["sensors"];
-ldr = sensors[0];
-
-name = ldr["name"];
-handler = ldr["handler"];
-exprStr = handler["str"];
-exprInt = handler["int"];
-exprBool = handler["bool"];
-
-argumentsList = [name,name,exprStr,exprInt,exprBool];
+argumentsList = [];
 
 automataJson = {
     "template":template,
     "argumentsList":argumentsList
   }
+
+function buildSensors(json) {
+  i = 0;
+  json["sensors"].forEach(function(sensor){
+    name = sensor["name"];
+    handler = sensor["handler"];
+    exprStr = handler["str"];
+    exprInt = handler["int"];
+    exprBool = handler["bool"];
+    argumentsList = [name,name,exprStr,exprInt,exprBool];
+    automataJson["argumentsList"][i++] = argumentsList;
+  });
+}
+buildSensors(device01);

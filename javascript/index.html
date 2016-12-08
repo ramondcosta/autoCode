@@ -8,7 +8,9 @@
 </head>
 <body>
   <script>
-  code = vsprintf(automataJson["template"],automataJson["argumentsList"]);
+  code = vsprintf(automataJson["template"],automataJson["argumentsList"][0]);
+  console.log(code);
+	code = vsprintf(automataJson["template"],automataJson["argumentsList"][1]);
   console.log(code);
   </script>
 
