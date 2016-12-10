@@ -18,9 +18,9 @@ template = "class %s : public Sensor{\n" +
 argumentsList = [];
 
 automataJson = {
-    "template":template,
-    "argumentsList":argumentsList
-  }
+    "template":template,// The template of the code;
+    "argumentsList":argumentsList// Array of a list of arguments
+}
 
 function buildSensors(json) {
   i = 0;
